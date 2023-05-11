@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+padding: 0;
+background: rgba(193, 192, 192, 0.8);
+font-family: 'Open Sans', sans-serif;
+color: #003049;
+font-size: 100%;
+}
+
+h1, h2 {
+position: absolute;
+z-index: 650;
+top: 10px;
+left: 15px;
+padding: 8px 15px;
+margin: 0;
+color: #003049;
+font-family: 'Della Respira';
+background: rgba(193, 192, 192, 0.8);
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+text-transform: uppercase;
+}
+
+h1 {
+font-size: 1.5em;
+}
+
+h2 {
+font-size: 1.2em;
+cursor: pointer;
+}
+
+h2:hover {
+background: #34a0a4;
+}
+
+h2:active {
+background: #7ab99f;
+}
+
+#map {
+position: absolute;
+width: 100%;
+top: 0;
+bottom: 0;
+}
+
+#modal {
+display: none;
+position: absolute;
+z-index: 2000;
+padding: 10px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(94, 94, 94, 0.8);
+color: #003049;
+font-size: 1.5em;
+}
+
+#modal .container {
+width: 500px;
+margin: 10px auto;
+padding: 5px 20px;
+position: relative;
+background: rgba(244, 242, 242, 0.8);
+border-radius: 5px;
+border: 1px solid grey;
+}
+
+#modal a {
+font-weight: bold;
+color: #003049;
+}
+
+#modal a:hover {
+color: #34a0a4;
+}
+
+#modal div {
+margin: 20px auto;
+}
+
+#modal h1 {
+display: none;
+}
+
+#modal p,
+#modal ul {
+font-size: 1.0rem;
+line-height: 1.5rem;
+margin: 5px 0;
+}
+
+#modal .footer {
+font-size: 1rem;
+text-align: center;
+}
+
+#modal span {
+position: absolute;
+top: 7px;
+right: 7px;
+cursor: pointer;
+}
+
+#modal h3 {
+font-family: 'Della Respira';
+text-transform: uppercase;
+font-size: 1em;
+}
+
+.legend {
+padding: 6px 8px;
+font-family: 'Della Respira';
+font-size: 1em;
+background: rgba(193, 192, 192, 0.8);
+color: #003049;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+width: fit-content;
+top: 55px;
+}
+
+.legend h3 {
+font-size: 1.1em;
+color: #003049;
+font-weight: bold;
+line-height: 1em;
+margin: 0;
+}
+
+.legend h3 span {
+font-size: 1.3em;
+margin: 0 20px 0 0;
+
+}
+
+.legend ul {
+list-style-type: none;
+padding: 0;
+margin: 12px 4px 0;
+}
+
+.legend li {
+height: 22px;
+}
+
+.legend span {
+width: 30px;
+height: 20px;
+float: left;
+margin-right: 10px;
+}
+
+#ui-controls {
+font-family: 'Della Respira';
+width: 176px;
+padding: 8px 25px 8px 15px;
+background: rgba(193, 192, 192, 0.8);
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+color: whitesmoke;
+}
+
+#ui-controls .min {
+float: left;
+}
+
+#ui-controls .max {
+float: right;
+margin-right: -15px;
+}
+
+.year-slider {
+width: 100%;
+}
+
+#ui-controls button {
+background: rgba(193, 192, 192, 0.8);
+font-family: 'Della Respira';
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+color: #003049;
+}
+
+label {
+font-size: 1.1em;
+font-weight: bold;
+}
+
+.states-layer {
+pointer-events: none !important;
+}
+
+#current-year {
+float: right;
+font-family: 'Della Respira';
+font-size: 2em;
+color: #003049;
+font-weight: bold;
+line-height: 1em;
+margin: 0;
+}
+
+/* #hawaiiMap {
+  position: absolute;
+  bottom: 100px;      
+  left: 50px;   
+  width: 300px;   
+  height: 200px;  
+  border: 1px solid #000;
+  z-index: 650;
+} */
+
+@media (max-width: 576px) and (orientation: portrait) {
+h1 {
+display: none;
+}
+
+#modal .container {
+width: 90%;
+}
+
+#modal h1 {
+display: block;
+position: relative;
+margin: 20px auto;
+padding: 0;
+font-size: 1.6rem;
+top: unset;
+left: unset;
+}
+}

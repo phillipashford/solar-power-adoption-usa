@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Thirty Years of Solar Power in America</title>
+  <!-- Scrolling past console errors after the refresh drives me mad shortly after the 100th refresh -->
+  <link rel="icon" type="image/x-icon" href="https://graphics/favicon.ico">
+  <!-- Should external libraries be updated? -->
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Della+Respira&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Residential Electrical Usage from Solar: 1989 &ndash; 2020</h1>
+  <h2 id="button">Info</h2>
+  <div id="map"></div>
+  <!-- <div id="hawaiiMap"></div> -->
+  <div id="ui-controls">
+    <label for="slider"></label>
+    <input id="slider" type="range" min="1989" max="2020" value="1989" step="1" class="year-slider">
+    </input>
+    <button id="autoplay-toggle">Play</button>
+    <span id="current-year">1989</span>
+  </div>
+  <div id="modal">
+    <div class="container">
+      <span>
+        &times;
+      </span>
+      <h1>Shining a Light on Residential Solar: 30 Years of Solar Energy in American Homes</h1>
+      <h3>About this web map</h3>
+      <p>This interactive map allows users to explore the varied adaption of solar power in the residential energy
+        sector in the United States over time.</p>
+      <p>Programmatically dynamic color-coding helps to visualize the percentage of all of the residential electrical
+        consumption which was derived from solar power.</p>
+      <p>Immediately obvious patterns that may be apparent to users include:</p>
+      <ul>
+        <li>It seems there was earlier adoption, and it seems there are greater percentages of solar power usage, in southerly and
+          sunnier locales.</li>
+        <li>Hawaii is such an outlier (23% in 2020) that it is the only state in the top tier!</li>
+        <li>There seems to be a more rapid uptick in the years after 2010.</li>
+        <li>Seemingly all states have increased their relative solar energy usage in residential consumption during this
+          three decade period.</li>
+      </ul>
+      <h3>About the Data</h3>
+      <p>
+        The energy data visualized in this map was acquired from the <a
+          href="https://www.eia.gov/opendata/browser/seds">API Dashboard</a> of the <a href="https://www.eia.gov/">US
+          Energy Information Administration</a>.</p>
+      <p>The EIA has succeeded in their mission to "[make] energy data more accessible, understandable, relevant, and
+        responsive to your needs". Their data portal and API is a great model for other governmental groups with a
+        commitment to open data.</p>
+      <p>The EIA's user-friendly API is free to the public with no account registration required.
+      </p>
+      <p>
+        The state polygons were created from shapefiles retrieved from <a
+          href="https://www.naturalearthdata.com/">Natural Earth</a>, an open repository offering free vector and raster
+        map data in the public domain.
+      </p>
+
+      <div id="modal-footer" class="footer"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.2/chroma.min.js"
+    integrity="sha512-8TVPS0EFkkmtT6yPb5K4csnSt3tjbKRrs0F8gvTNKv2OxOcwDO7+Klkz86gMVrzfqtZos5N2a+k+r9D+hlccmQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="js/app.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</body>
+
+</html>
