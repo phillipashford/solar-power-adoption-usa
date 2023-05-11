@@ -230,7 +230,32 @@
 
         console.log("solarPercentage:", solarPercentage);
 
-        
+        ////////// Creating the Breaks
+
+        // Create array to store all values of all of the year keys in all of the state objects within the solarPercentage object 
+        const solarRange = [];
+
+        // loop through all the state objects
+        for (var state in solarPercentage) {
+
+            // for each state object, loop througha all the year keys
+            for (var year in solarPercentage[state]) {
+                // Push the value of every year key to the solarRange array
+                solarRange.push(solarPercentage[state][year]);
+            }
+        }
+
+        // create class breaks
+        var breaks = chroma.limits(solarRange, 'k', 5);
+
+        // Find the min and max of the solarRange array
+        const solarRangeMax = Math.max.apply(null, solarRange);
+        const solarRangeMin = Math.min.apply(null, solarRange);
+
+        // create color generator function
+        var colorize = chroma.scale(['#34A0A4', '#D9ED92']).domain([solarRangeMin, solarRangeMax])
+            .classes(breaks)
+            .mode('lab');
 
         drawMap(solarPercentage, colorize, states);
         drawLegend(breaks, colorize);
